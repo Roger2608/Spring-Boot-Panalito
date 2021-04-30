@@ -1,0 +1,58 @@
+:root{
+    --color-miel: #D78A0E;
+    --color-algarrobina: #D78A0E;
+    --color-polen: #D78A0E;
+}
+
+body{
+    font-family: 'Bitter', serif;
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: .05rem;
+}
+.cuerpo{
+    font-family: 'Oswald', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: .05rem;
+}
+.navbar{
+    min-height: 6rem;
+}
+
+.bg-miel{
+    background-color: var(--color-miel)!important;
+}
+.bg-algarrobina{
+    background-color: var(--color-algarrobina)!important;
+}
+.bg-polen{
+    background-color: var(--color-polen)!important;
+}
+
+.font{
+    font-family: 'Permanent Marker', cursive;
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: .05rem;
+}
+.contactenos{
+    color: #ffc107;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: .05rem;
+}
+.contactos{
+    font-family: 'DM Mono', monospace;
+    font-size: 0.9rem;
+    font-weight: 300;
+    letter-spacing: .05rem;
+}
+.final{
+    color: #9795a8;
+    float: left;
+    min-height: 30px;
+    line-height: 30px;
+    margin: 0 0 20px 0;
+}

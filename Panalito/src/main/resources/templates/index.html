@@ -1,0 +1,339 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+	<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+<link
+	href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet" href="estilos\estilos.css">
+<link
+	href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
+	rel="stylesheet">
+<!-- iconos -->
+<link
+	href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css"
+	rel="stylesheet">
+<!-- contactos -->
+<link
+	href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&display=swap"
+	rel="stylesheet">
+<title>EL PANAL</title>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand font-weight-bold"> <img
+			src="imagenes\abeja.png" width="40">EL PANAL
+		</a>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item"><a class="nav-link" href="/">INICIO<span
+						class="sr-only">(current)</span></a></li>
+				<!-- vista pagina de nosotros en href
+                <li class="nav-item">
+                    <a class="nav-link" href="#">NOSOTROS</a>
+                </li>
+                 -->
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+					role="button" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false"> PRODUCTOS </a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="/miel">MIEL</a> <a
+							class="dropdown-item" href="/algarrobina">ALGARROBINA</a> <a
+							class="dropdown-item" href="/polen">POLEN</a>
+					</div></li>
+				<div class="btn-group dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+						role="button" data-toggle="dropdown" aria-haspopup="true"
+						aria-expanded="false"> PEDIDOS </a>
+					<form class="form-inline my-2 my-lg-0" method="Post"
+						th:action="@{/login}">
+						<div
+							class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
+							<div>
+								<label>Nombre:</label> <input type="text" th:name="txtNombre"
+									class="text-center" placeholder="Ingrese Nombre">
+							</div>
+							<div>
+								<label>Apellido:</label> <input type="text"
+									th:name="txtApellido" class="text-center"
+									placeholder="Ingrese Apellido">
+							</div>
+							<div>
+								<label>Teléfono:</label> <input type="text"
+									th:name="txtTelefono" class="text-center"
+									placeholder="Ingrese Teléfono">
+							</div>
+							<div class="dropdown-divider"></div>
+							<center>
+								<button class="btn btn-outline-dark my-2 my-sm-0" type="submit"
+									aria-setsize="">Realizar Pedido</button>
+							</center>
+
+							</label>
+						</div>
+					</form>
+				</div>
+			</ul>
+
+			<div class="btn-group dropleft">
+				<button type="button"
+					class="btn btn-outline-warning my-2 my-sm-0 dropdown-toggle text-dark"
+					data-toggle="dropdown" data-display="static" aria-haspopup="true"
+					aria-expanded="false">INGRESAR</button>
+				<form class="form-inline my-2 my-lg-0" th:action="@{/login}"
+					method="Post">
+					<div
+						class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
+						<div>
+							<label>Usuario:</label> <input type="text" th:name="txtUsuario"
+								class="text-center" placeholder="Ingrese Usuario" autofocus required>
+						</div>
+						<div>
+							<label>Contraseña:</label> <input type="password"
+								th:name="txtContrasena" class="text-center"
+								placeholder="Ingrese Contraseña" autofocus required>
+						</div>
+						<div class="dropdown-divider"></div>
+						<center>
+							<button class="btn btn-outline-dark my-2 my-sm-0" type="submit"
+								aria-setsize="">Continuar</button>
+						</center>
+					</div>
+				</form>
+			</div>
+		</div>
+	</nav>
+
+	<div id="carouselExampleCaptions" class="carousel slide"
+		data-ride="carousel">
+		<ol class="carousel-indicators">
+			<li data-target="#carouselExampleCaptions" data-slide-to="0"
+				class="active"></li>
+			<!--
+            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+            -->
+		</ol>
+
+		<div class="carousel-inner">
+			<!--
+            <div class="carousel-item active">
+                <img src="imagenes\M-A-P.jpg" class="d-block w-100" height="625">
+                <div class="carousel-caption d-none d-md-block">
+                    <div class="container tex-center cuerpo form-group bg-dark">
+                        <h5 class="font-weight-bold text-uppercase">¿QUIENES SOMOS?</h5>
+                        <p>
+                            Somos una Empresa que <span class="font-weight-bold text-uppercase">Velamos</span> por
+                            <span class="font-weight-bold text-uppercase">Nuestros Clientes</span>
+                            entregandoles productos alimenticios <span
+                                class="font-weight-bold text-uppercase">Totalmente Artesanales</span>
+                            a un <span class="font-weight-bold text-uppercase">Cómodo Precio</span> mejorando así su
+                            <span class="font-weight-bold text-uppercase">Salud y Estilo de Vida</span>
+                        </p>
+                    </div>
+
+                    <div class="container tex-center cuerpo">
+                        <h5 class="font-weight-bold text-uppercase">¿QUE QUEREMOS?</h5>
+                        <p>
+                            Queremos mejorar con <span class="font-weight-bold text-uppercase">Nuestros Productos</span>
+                            la
+                            <span class="font-weight-bold text-uppercase">Salud</span> y el <span
+                                class="font-weight-bold text-uppercase">Estilo de vida</span> de
+                            <span class="font-weight-bold text-uppercase">Nuestros Clientes</span> a Nivel Mundial.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+            -->
+			<div class="carousel-item active">
+				<img src="imagenes\nuestros productos.png" class="d-block w-100"
+					height="625">
+			</div>
+			<!--
+            <div class="carousel-item">
+                <img src="imagenes\unnamed.jpg" class="d-block w-100" height="625">
+                <div class="carousel-caption d-none d-md-block text-ligth ">
+                    <h5>Third slide label</h5>
+                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                </div>
+            </div>
+            -->
+		</div>
+		<a class="carousel-control-prev" href="#carouselExampleCaptions"
+			role="button" data-slide="prev"> <span
+			class="carousel-control-prev-icon" aria-hidden="true"></span> <span
+			class="sr-only">Previous</span>
+		</a> <a class="carousel-control-next" href="#carouselExampleCaptions"
+			role="button" data-slide="next"> <span
+			class="carousel-control-next-icon" aria-hidden="true"></span> <span
+			class="sr-only">Next</span>
+		</a>
+	</div>
+	<div class="bg-warning">
+		<br>
+		<div class="container text-center">
+			<!-- <h2 class="font">NUESTROS PRODUCTOS</h2>
+            <div class="dropdown-divider"></div> -->
+			<br>
+			<div class="row align-items-center">
+				<div class="col-md-4 ">
+					<h5 class="text-light bg-miel">MIEL</h5>
+					<div class="dropdown-divider"></div>
+					<img src="imagenes\miel-oficial.png" class="d-block w-100"
+						height="250">
+					<div class="bg-light">
+						<p>Praesent commodo cursus magna, vel scelerisque nisl
+							consectetur.</p>
+						<br>
+						<center>
+							<!-- vista pagina de la miel en href -->
+							<a href="miel.html"
+								class="btn btn-light btn-md bg-polen text-light" role="button"
+								aria-pressed="true">Ver más</a>
+						</center>
+						<br>
+					</div>
+				</div>
+				<div class="col-md-4 ">
+					<h5 class="text-light bg-algarrobina">ALGARROBINA</h5>
+					<div class="dropdown-divider"></div>
+					<img src="imagenes\algarrobinaFirme.jpg" class="d-block w-100"
+						height="300">
+					<div class="bg-light">
+						<p>La algarrobina es un producto que proviene de la algarroba,
+							la cual es el fruto maduro del algarrobo y que es muy usada en la
+							preparación de jugos, cócteles y postres.</p>
+						<br>
+						<center>
+							<!-- vista pagina del algarrobina en href -->
+							<a href="algarrobina.html"
+								class="btn btn-light btn-md bg-polen text-light" role="button"
+								aria-pressed="true">Ver más</a>
+						</center>
+						<br>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<h5 class="text-light bg-polen">POLEN</h5>
+					<div class="dropdown-divider"></div>
+					<img src="imagenes\unnamed.jpg" class="d-block w-100" height="250">
+					<div class="bg-light">
+						<p>Entre los muchos productos que nos brindan las abejas, el
+							Polen es uno de los más completos y energizantes.</p>
+						<br>
+						<center>
+							<!-- vista pagina del polen en href -->
+							<a href="polen.html"
+								class="btn btn-light btn-md bg-polen text-light" role="button"
+								aria-pressed="true">Ver más</a>
+						</center>
+						<br>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br> <br> <br> <br>
+	</div>
+	<div class="container bg-light text-center ">
+		<br>
+		<h2 class="contactenos">Contactenos</h2>
+		<div class="dropdown-divider"></div>
+		<br>
+
+		<div class="row align-items-center form-group text-center contactos">
+			<div class="col-md-2"></div>
+			<div class="col-md-4">
+				<img src="imagenes\M-A-P.jpg" height="300" width="400">
+			</div>
+			<div class="col-md-4">
+				<div>
+					<img src="imagenes/icon.svg" height="20"> Atencion: <br>
+					Lunes - Sábado <br> <img src="imagenes\alarm-outline.svg"
+						height="20"> Horario: <br> 9:30 a.m. - 05:30 p.m.
+				</div>
+				<div>
+					<img src="imagenes\call-outline.svg" height="20"> Teléfono:
+					<p>
+						<img src="imagenes\logo-whatsapp.svg" height="20"> +51
+						921-196-017
+					</p>
+				</div>
+				<!-- 				<div> -->
+				<!-- 					<img src="imagenes\mail-outline.svg" height="20"> Correo: -->
+				<!-- 					<p> -->
+				<!-- 						correo de la empresa -->
+				<!-- 					</p> -->
+				<!-- 				</div> -->
+				<div class="btn-group dropup">
+					<button type="button"
+						class="btn btn-outline-warning my-2 my-sm-0 dropdown-toggle text-dark"
+						data-toggle="dropdown" data-display="static" aria-haspopup="true"
+						aria-expanded="false">PEDIDOS</button>
+					<form class="form-inline my-2 my-lg-0">
+						<div
+							class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
+							<div>
+								<label>Nombre:</label> <input type="text" name="txtNombre"
+									class="text-center" placeholder="Ingrese Nombre">
+							</div>
+							<div>
+								<label>Apellido:</label> <input type="text" name="txtApellido"
+									class="text-center" placeholder="Ingrese Apellido">
+							</div>
+							<div>
+								<label>Teléfono:</label> <input type="text" name="txtTelefono"
+									class="text-center" placeholder="Ingrese Teléfono">
+							</div>
+							<div class="dropdown-divider"></div>
+							<center>
+								<button class="btn btn-outline-dark my-2 my-sm-0" type="submit"
+									aria-setsize="" id="alerta">Realizar Pedido</button>
+							</center>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+
+		<br>
+	</div>
+
+
+
+	<!--scripts js-->
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"
+		integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+
+	<script>s
+		const alerta = document.querySelector('#alerta');
+		alerta.addEventListener('click',() =>{
+			toastr.error("asgfasbggasbghb", {
+				"progressBar" : true
+			})
+		})
+	</script>
+</body>
+</html>
